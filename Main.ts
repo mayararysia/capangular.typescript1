@@ -102,6 +102,41 @@ console.log(produtoB.toString());
 console.log("\n");
 console.log(produtoC.toString());
 
+console.log("Verificando se produtos tem desconto....\n");
+console.log("produto A - tem desconto na categoria tecnologia...\n");
+console.log("produto B - tem desconto na categoria esporte...\n");
+console.log("produto C - tem desconto na categoria alimentos...\n");
+
+var precoDescontadoA = produtoA.obterCategoria()
+    .obterDesconto()
+    .calcularDesconto(produtoA.obterPreco());
+
+var precoDescontadoB = produtoB.obterCategoria()
+    .obterDesconto()
+    .calcularDesconto(produtoB.obterPreco());
+
+var precoDescontadoC = produtoC.obterCategoria()
+    .obterDesconto()
+    .calcularDesconto(produtoC.obterPreco());
+
+produtoA.atualizarPreco(precoDescontadoA);
+produtoB.atualizarPreco(precoDescontadoB);
+produtoC.atualizarPreco(precoDescontadoC);
+
+console.log("Produtos Com os devidos descontos....\n\n");
+console.log(produtoA.toString());
+
+console.log("\nDesconto de "
+    + produtoA.obterCategoria().obterDesconto().obterDescontoTecnologia()*100 + "%");
+
+console.log(produtoB.toString());
+console.log("\nDesconto de "
+    + produtoB.obterCategoria().obterDesconto().obterDescontoEsporte()*100 + "%");
+
+console.log(produtoC.toString());
+console.log("\nDesconto de "
+    + produtoC.obterCategoria().obterDesconto().obterDescontoAlimentos()*100 + "%");
+
 // xxx Processo de Compra do Cliente -- Preencher dados do sistema
 // Preenche o Endereço:
 var IEndereco: EnderecoInterface = {
@@ -124,7 +159,8 @@ var ICliente: ClienteInterface = {
 }
 
 var cliente = new Cliente(ICliente);
-console.log(cliente.toStringPessoa() + cliente.toString());
+// console.log(cliente.toStringPessoa() + cliente.toString());
+console.log(cliente.toString());
 
 // xxx Cliente tem lista de Produtos
 console.log(cliente.obterNome()+" tem lista de produtos...\n");

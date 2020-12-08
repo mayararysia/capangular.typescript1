@@ -22,4 +22,8 @@ export class Desconto {
     atualizarDesconto(porcentagem: number): void{
         this.porcentagem = porcentagem;
     }
+
+    calcularDesconto(preco: number){
+        return preco * (1-this.porcentagem);
+    }
 }

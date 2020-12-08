@@ -25,6 +25,10 @@ export class Produto extends Fornecedor {
         return this.preco;
     }
 
+    atualizarPreco(preco: number): void {
+        this.preco = preco;
+    }
+
     obterCategoria(): Categoria{
        return this.categoria;
     }

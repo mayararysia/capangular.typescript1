@@ -10,7 +10,11 @@ export class Cliente extends Pessoa{
     private endereco: Endereco;
 
     constructor(clienteInterface: ClienteInterface) {
-        super(clienteInterface);
+        super({
+            nome: clienteInterface.nome,
+            cpf: clienteInterface.cpf
+        });
+        
         this.usuario = clienteInterface.usuario;
         this.senha = clienteInterface.senha;
         this.endereco = clienteInterface.endereco;
